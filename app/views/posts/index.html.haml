@@ -1,2 +1,25 @@
-.h
-  post#index
+.header
+  .header__title
+    ShearSpace
+  .header__search
+    = form_with(url: "#", local: true, method: :get, class: "search-form") do |form|
+      = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
+      = form.submit "search", class: "search-btn" 
+  .header__box
+    .header__box__signin.btn
+      = link_to "新規登録", "#", class: "signin__btn"
+    .header__box__log.btn
+      = link_to "ログイン", "#", class: "log__btn"
+    .header__box__post.btn
+      = link_to "投稿する", "#", class: "post__btn"
+  .header__img
+    .header__img__pic
+      %img{:src => "/assets/member_photo_noimage_thumb.png", :class => "img"}/
+    .header__img__nickname
+      %p.nickname
+        tamaru
+.content
+  .left
+  .main
+  .right
+.footer
