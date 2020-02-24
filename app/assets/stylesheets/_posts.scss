@@ -1,0 +1,157 @@
+.header{
+  width: 100%;
+  height: 80px;
+  background-color:#00ffff;
+  display: flex;
+  justify-content: center;
+  &__title{
+    width: 20%;
+    height: 100%;
+    font-size: 2rem;
+    color:#1f3134;
+    // background-color: red;
+    font-weight:bold;
+    text-align: center;
+    line-height: 80px;
+  }
+  &__search{
+    width: 30%;
+    height: 100%;
+    .search-form{
+      width: 100%;
+      height: 50%;
+      margin-top: 20px;
+      line-height: 40px;
+      display: flex;
+      .search-input{
+        height: 100%;
+        width: 80%;
+        font-size: 1rem;
+        border: 1px  #e0ffff;
+        padding-left: 10px;
+      }
+      .search-btn{
+        width: 20%;
+        height: 40px;
+        background-color: blue;
+        font-size: 1rem;
+        font-weight:bold;
+        color:#fff ;
+        border: 2px #1f3134;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__box{
+    width: 20%;
+    height: 100%;
+    // background-color: green;
+    display: flex;
+    justify-content: flex-end;
+  
+    .btn{
+      margin-top: 20px;
+      line-height: 40px;
+      background-color: #fff;
+      text-align: center;
+      font-weight: bold;
+      border: none;
+      margin-left: 5px;
+      border-radius: 5px;
+    }
+    .btn :hover{
+      background-color: blue;
+      text-align: center;
+      font-weight: bold;
+      // border: solid 2px blue;
+      color:#fff;
+      border-radius: 5px;
+      transition: all 0.3s ease-out;
+    }
+
+    &__signin{
+      width: 30%;
+      height: 40px;
+      .signin__btn{
+        color: blue;
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+      }
+    }
+    &__log{
+      width: 30%;
+      height: 40px;
+      .log__btn{
+        color: blue;
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+      }
+    }
+    &__post{
+      width: 30%;
+      height: 40px;
+      .post__btn{
+        color: blue;
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+      }
+    }
+  }
+  &__img{
+    width: 10%;
+    height: 100%;
+    margin-top:5px ;
+    &__pic{
+      width: 50%;
+      height: 70%;
+      text-align: center;
+      margin: 0 auto;
+      .img{
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+      }
+    }
+    &__nickname{
+      width: 100%;
+      height: 30%;
+      text-align: center;
+      color: #1f3134;
+    }
+  }
+
+}
+
+.content{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  padding:30px;
+  background-color: #f5f5f5;
+  .left{
+    width: 300px;
+    height: 100%;
+    background-color: #f5f5f5;
+  }
+  .main{
+    width: calc( 100vw - 600px);
+    height: 100%;
+    background-color: #fff;
+  }
+  .right{
+    width: 300px;
+    height: 100%;
+    background-color: #f5f5f5;
+  }
+}
+
+.footer{
+  width: 100%;
+  height: 200px;
+  background-color: #1f3134;
+}
+
