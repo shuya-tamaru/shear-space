@@ -8,8 +8,7 @@
     width: 20%;
     height: 100%;
     font-size: 2rem;
-    color:#1f3134;
-    // background-color: red;
+    color:#fff;
     font-weight:bold;
     text-align: center;
     line-height: 80px;
@@ -120,7 +119,8 @@
       width: 100%;
       height: 30%;
       text-align: center;
-      color: #1f3134;
+      color: #fff;
+      font-weight: bold;
     }
   }
 
@@ -133,25 +133,188 @@
   padding:30px;
   background-color: #f5f5f5;
   .left{
-    width: 300px;
+    width: 20%;
     height: 100%;
     background-color: #f5f5f5;
+    &__category{
+      width: 80%;
+      height: 80%;
+      &__top{
+        width: 100%;
+        height: 50px;
+        background-color: blue;
+        line-height:50px;
+        text-align: center;
+        cursor: pointer;
+        color:#fff;
+        font-weight: bold;
+        &__list{
+          width: 100%;
+          height: 50px;
+          background-color: rgba(255, 255, 255, 0.5);
+          line-height:50px;
+          text-align: center;
+          .list{
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            color:blue;
+          }
+        }
+      } 
+      &__top :hover{
+        background-color:rgba(0, 0, 255, 0.1);
+        border-bottom:none;
+      }
+    }
   }
   .main{
-    width: calc( 100vw - 600px);
+    width: calc( 100vw - 40%);
     height: 100%;
     background-color: #fff;
+    padding:0 10px 10px 10px;
+
+    &__box{
+      width: 100%;
+      height: 100%;
+      &__top{
+        width: 100%;
+        height: 50px;
+        background-color: blue;
+        color: #fff;
+        font-weight:bold;
+        line-height: 50px;
+        text-align: center;
+      }
+      &__contents{
+        width: 100%;
+        height: calc( 100% - 50px);
+        background-color:#f5fffa;
+        &__post{
+          width: 100%;
+          height: 80px;
+          display: flex;
+          border-bottom:dotted 1px ;
+
+          &__img{
+            height: 100%;
+            width: 10%;
+            .profile-img{
+              width: 60px;
+              height: 60px;
+              text-align: center;
+              border-radius:50% ;
+              margin:10px 0 0 10px ;
+            }
+          }
+          &__text{
+            height: 80px;
+            width: 90%;
+            padding: 5px;
+            &__category{
+              width: 100%;
+              height: 20%;
+              font-size: 0.7rem;
+              font-weight: bold;
+              color: gray;
+            }
+            &__title{
+              width: 100%;
+              height: 50%;
+              line-height: 40px;
+              font-weight: bold;
+              color: #1f3134;
+              opacity: 0.8;
+
+            }
+            &__nickname{
+              width: 100%;
+              height: 30%;
+              display: flex;
+              line-height: 32px;
+              color: gray;
+              font-size: 0.7rem;
+              .nickname{
+                margin-left:5px;
+              }
+              .date{
+                margin-left:15px;
+              }
+            }
+          }
+        }
+      }
+    }
+
   }
   .right{
-    width: 300px;
+    width: 20%;
     height: 100%;
     background-color: #f5f5f5;
+    &__profile{
+      height: 40%;
+      width: 100%;
+      background-color: #1f3134;
+      color: #fff;
+      opacity: 0.9;
+      font-weight: bold;
+      &__img{
+        width: 70%;
+        height: 70%;
+        margin: 0 auto;
+        .img{
+          padding: 10px 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+      }
+      &__nickname{
+        width: 100%;
+        height: 15%;
+        text-align: center;
+        padding-top:10px;
+        padding-top:10px;
+        border-top:solid 1px #fff ;
+      }
+      &__post{
+        width: 100%;
+        height: 15%;
+        text-align: center;
+        padding-top:10px;
+        border-top:solid 1px #fff ;
+      }
+    }
   }
 }
 
 .footer{
   width: 100%;
-  height: 200px;
+  height: 100px;
   background-color: #1f3134;
+  padding-top: 5px;
+  &__title{
+    width: 100%;
+    height: 20%;
+    font-size: 1.5rem;
+    color:#fff;
+    font-weight:bold;
+    text-align: center;
+    line-height: 40px;
+  }
+  &__about{
+    width: 100%;
+    height: 20%;
+    color:#fff;
+    margin-top:30px ;
+    .text{
+      display: flex;
+      justify-content: center;
+      &__link{
+        color:#fff;
+        margin-left:20px ;
+      }
+    }
+  }
 }
 
