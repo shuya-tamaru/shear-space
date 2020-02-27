@@ -1,0 +1,10 @@
+.right
+  - if user_signed_in?
+    .right__profile
+      .right__profile__img
+        %img{:src => "/assets/member_photo_noimage_thumb.png", :class => "img"}/
+      .right__profile__nickname
+        =current_user.nickname
+      .right__profile__post
+        記事数：777
+  - else
