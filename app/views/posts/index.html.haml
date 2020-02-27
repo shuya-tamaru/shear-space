@@ -6,18 +6,26 @@
       = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
       = form.submit "search", class: "search-btn" 
   .header__box
-    .header__box__signin.btn
-      = link_to "新規登録", "#", class: "signin__btn"
-    .header__box__log.btn
-      = link_to "ログイン", "#", class: "log__btn"
-    .header__box__post.btn
-      = link_to "投稿する", "#", class: "post__btn"
+    - if user_signed_in?
+      .header__box__signin.btn
+        = link_to "投稿する", "#", class: "signin__btn"
+      .header__box__log.btn
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "log__btn"
+    - else
+      .header__box__signin.btn
+        = link_to "新規登録", users_path, class: "signin__btn"
+      .header__box__log.btn
+        = link_to "ログイン", new_user_session_path, class: "log__btn"
+
+
   .header__img
-    .header__img__pic
-      %img{:src => "/assets/member_photo_noimage_thumb.png", :class => "img"}/
-    .header__img__nickname
-      %p.nickname
-        tamaru
+    - if user_signed_in?
+      .header__img__pic
+        %img{:src => "/assets/member_photo_noimage_thumb.png", :class => "img"}/
+      .header__img__nickname
+        %p.nickname
+          =current_user.nickname
+    -else
 .content
   .left
     .left__category
@@ -76,13 +84,15 @@
               %p.nickname nickname
               %p.date 2020/02/25           
   .right
-    .right__profile
-      .right__profile__img
-        %img{:src => "/assets/member_photo_noimage_thumb.png", :class => "img"}/
-      .right__profile__nickname
-        nickname
-      .right__profile__post
-        記事数：55
+    - if user_signed_in?
+      .right__profile
+        .right__profile__img
+          %img{:src => "/assets/member_photo_noimage_thumb.png", :class => "img"}/
+        .right__profile__nickname
+          =current_user.nickname
+        .right__profile__post
+          記事数：777
+    - else
 .footer
   .footer__title
     ShearSpace
