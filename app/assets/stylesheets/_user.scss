@@ -1,0 +1,86 @@
+.contents2 {
+  background-color: #f5f5f5;
+  font-family: YuGothic;
+  height: 100vh;
+  &__title {
+    background-color: #ffffff;
+    height: 98px;
+    width: 700px;
+    font-size: 22px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #f5f5f5;
+    margin: 0 auto;
+  }
+  &__selection {
+    background-color: #ffffff;
+    min-height: calc(100vh - 128px - 98px - 1px - 240px);
+    width: 700px;
+    margin: 0 auto;
+    padding: 40px 0 0 0;
+    &__boxwhite {
+      background-color: #ffffff;
+      height: 80px;
+      width: 100%;
+    }
+    &__boxgray {
+      background-color: #f5f5f5;
+      height: calc(100vh - 128px - 98px - 1px - 240px - 288px);
+      width: 100%;
+    }
+  }
+  &__btn {
+    display: block;
+    height: 50px;
+    width: 343px;
+    margin: 0 auto 16px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #ffffff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 80px;
+    &__icon1 {
+      padding: 15px 52px 13px 17px;
+    }
+    &__icon2 {
+      padding: 15px 60px 13px 20px;
+    }
+    &__icon3 {
+      padding: 15px 78px 13px 18px;
+    }
+    &__mail {
+      background-color: #ef3a3a;
+      &:hover{
+        background-color: #ef3a3a;
+        opacity: 0.7;
+      }
+    }
+    &__facebook {
+      background-color: #414f8a;
+      &:hover{
+        background-color: #414f8a;
+        opacity: 0.7;
+      }
+    }
+    &__twitter{
+      background-color: #55acee;
+      &:hover{
+        background-color: #55acee;
+        opacity: 0.7;
+      }
+    }
+    &__google {
+      color: #000000;
+      border: thin solid #a7a7a7;
+      &:hover{
+        background-color: #fff;
+        opacity: 0.7;
+      }
+    }
+    
+  }
+}
