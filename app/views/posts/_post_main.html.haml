@@ -3,7 +3,7 @@
     .main__box__top
       投稿フォーム
     .form
-      = form_with model: @post, local: true, url: "#", class: "contents" do |f|
+      = form_with model: @post, local: true, url: posts_path, class: "contents" do |f|
         .form__title
           = f.text_field :title, class: "title",placeholder:"タイトル"
         .form__contents

@@ -51,6 +51,7 @@
       color:blue;
       font-weight: bold;
       border: none;
+      cursor: pointer;
     }
     .button:hover{
       width: 100%;
@@ -61,6 +62,8 @@
       color:#fff;
       font-weight: bold;
       border: none;
+      transition: all 0.3s ease-out;
+
     }
   }
 }
