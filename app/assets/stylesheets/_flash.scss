@@ -1,0 +1,14 @@
+.notification {
+  .notice {
+    background-color: $alert_yellow;
+    color: $side_blue_light;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .alert {
+    background-color: $alert_orange;
+    color: $white;
+    text-align: center;
+  }
+}

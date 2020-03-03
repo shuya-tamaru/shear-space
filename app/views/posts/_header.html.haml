@@ -1,6 +1,6 @@
 .header
   .header__title
-    ShearSpace
+    = link_to "ShearSpace", "/", id:"top"
   .header__search
     = form_with(url: "#", local: true, method: :get, class: "search-form") do |form|
       = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
@@ -13,7 +13,7 @@
         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "log__btn"
     - else
       .header__box__signin.btn
-        = link_to "新規登録", users_path, class: "signin__btn"
+        = link_to "新規登録", new_user_registration_path, class: "signin__btn"
       .header__box__log.btn
         = link_to "ログイン", new_user_session_path, class: "log__btn"
 

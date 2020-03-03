@@ -1,0 +1,11 @@
+.mypage{
+  height: calc(100vh - 180px);
+  width: 100%;
+  background-color: red;
+  &__profile{
+    height: 100%;
+    width: 50%;
+    background-color: blue;
+    margin: auto;
+  }
+}

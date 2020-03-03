@@ -66,4 +66,8 @@ gem "devise"
 gem "font_awesome5_rails"
 gem "font-awesome-sass"
 gem "devise"
+gem 'kaminari'
+gem 'carrierwave'
+gem 'mini_magick'
+
 

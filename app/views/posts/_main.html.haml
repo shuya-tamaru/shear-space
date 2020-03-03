@@ -3,36 +3,24 @@
     .main__box__top
       記事一覧
     .main__box__contents
-      .main__box__contents__post
-        .main__box__contents__post__img
-          %img{:src => "/assets/member_photo_noimage_thumb.png", :class => "profile-img"}/
-        .main__box__contents__post__text
-          .main__box__contents__post__text__category
-            カテゴリー：構造設計
-          .main__box__contents__post__text__title
-            ２階建てRC造建築物の構造設計手法について
-          .main__box__contents__post__text__nickname
-            %p.nickname nickname
-            %p.date 2020/02/25
-      .main__box__contents__post
-        .main__box__contents__post__img
-          %img{:src => "/assets/member_photo_noimage_thumb.png", :class => "profile-img"}/
-        .main__box__contents__post__text
-          .main__box__contents__post__text__category
-            カテゴリー：意匠設計
-          .main__box__contents__post__text__title
-            リゾートホテルにおけるゾーニング計画のポイントTop10
-          .main__box__contents__post__text__nickname
-            %p.nickname nickname
-            %p.date 2020/02/25
-      .main__box__contents__post
-        .main__box__contents__post__img
-          %img{:src => "/assets/member_photo_noimage_thumb.png", :class => "profile-img"}/
-        .main__box__contents__post__text
-          .main__box__contents__post__text__category
-            カテゴリー：施工管理
-          .main__box__contents__post__text__title
-            棚足場を組む際の法令一覧
-          .main__box__contents__post__text__nickname
-            %p.nickname nickname
-            %p.date 2020/02/25      
+      - @posts.each do |post|
+        .main__box__contents__post
+          .main__box__contents__post__img
+            = link_to "#" do
+              %img{:src => "/assets/member_photo_noimage_thumb.png", :class => "profile-img"}/
+          .main__box__contents__post__text
+            .main__box__contents__post__text__category
+              = link_to "#" do
+                カテゴリー : 
+                =post.category.name
+            .main__box__contents__post__text__title
+              = link_to post_path(post.id) do
+                =post.title
+            .main__box__contents__post__text__nickname
+              %p.nickname 
+                = link_to "#" do
+                  = post.user.nickname
+              %p.date 
+                = post.created_at.strftime("%Y年%m月%d日")
+    .page
+      = paginate(@posts)
