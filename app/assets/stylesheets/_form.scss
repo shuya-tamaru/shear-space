@@ -1,0 +1,118 @@
+.post-content{
+  width: 100%;
+  height: 150vh;
+  padding:30px;
+  background-color: #f5f5f5;
+}
+
+.post{
+  width: calc( 100vw - 40%);
+  height: 100%;
+  background-color: #fff;
+  padding:0 10px 0px 10px;
+  margin: auto;
+  &__box{
+    width: 100%;
+    height: 100%;
+    &__top{
+      width: 100%;
+      height: 50px;
+      background-color: blue;
+      color: #fff;
+      font-weight:bold;
+      line-height: 50px;
+      text-align: center;
+      padding:5px;
+    }
+    .form{
+      width: 100%;
+      height: calc( 100% - 50px );
+      flex-direction: column;
+      &__title{
+        width: 100%;
+        height: 20%;
+        margin: 0 auto;
+        padding:10px 0px 10px 0;
+        .title{
+          height: 50px;
+          width: 100%;
+          padding:0 10px;
+          font-size: 1rem;
+          outline: 0;
+          border: 1px solid gray;
+        }
+        .title:focus{
+          border-color: #0099e8;
+        }
+      }
+      &__category{
+        height: 50px;
+        width: 100%;
+        font-size: 1rem;
+        outline: 0;
+        position: relative;
+        #post_category_id{
+          position: absolute;
+          right:0;
+          width: 200px;
+          height: 50px;
+          font-size: 1rem;
+          display: inline-block;
+          cursor:pointer;
+          outline: 0;
+          text-align: center;
+        }
+        #post_category_id:focus{
+          border-color: #0099e8;
+        }
+      }
+      &__contents{
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        margin-top: 10px;
+        .content{
+          width: 100%;
+          height: 550px;
+          padding:0 10px;
+          font-size: 1rem;
+          outline: 0;
+          padding-top:10px;
+          background-color: #fff;
+        }
+        .content:focus{
+          border-color: #0099e8;
+        }
+      }
+      &__btn{
+        width: 100%;
+        height: 40px;
+        margin: 0 auto;
+        background-color: #fff;
+        margin-top:10px ;
+        .button{
+          width: 100%;
+          height: 100%;
+          font-size: 20px;
+          display: inline-block;
+          background-color:rgba(0, 0, 255, 0.2);
+          color:blue;
+          font-weight: bold;
+          border: none;
+          cursor: pointer;
+        }
+        .button:hover{
+          width: 100%;
+          height: 100%;
+          font-size: 20px;
+          display: inline-block;
+          background-color:blue;
+          color:#fff;
+          font-weight: bold;
+          border: none;
+          transition: all 0.3s ease-out;
+        }
+      }
+    }
+  }
+}

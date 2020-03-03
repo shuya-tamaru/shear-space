@@ -1,0 +1,12 @@
+.right
+  - if user_signed_in?
+    .right__profile
+      .right__profile__img
+        = link_to user_path(current_user.id) do
+          %img{:src => "/assets/member_photo_noimage_thumb.png", :class => "img"}/
+      .right__profile__nickname
+        =current_user.nickname
+      .right__profile__post
+        記事数 : 
+        = current_user.posts.length
+  - else

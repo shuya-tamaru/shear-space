@@ -1,0 +1,15 @@
+.main
+  .main__box
+    .main__box__top
+      投稿フォーム
+    .form
+      = form_with model: @post, local: true, url: post_path, class: "contents" do |f|
+        .form__title
+          = f.text_field :title, class: "title",placeholder:"タイトル"
+        .form__contents
+          = f.text_area :content, class: "content",placeholder:"記事コンテンツ"
+        .form__btn
+          =f.submit "更新", class: "button"
+
+
+ 
