@@ -69,5 +69,6 @@ gem "devise"
 gem 'kaminari'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'jquery-rails'
 
 
