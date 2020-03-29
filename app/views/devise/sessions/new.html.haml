@@ -1,17 +1,30 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.SignInMain
+  .SignInMain__head
+    = link_to "ShearSpace", "/", id:"top_font"
+  .SignInMain__title
+    %ul
+      %li アカウントをお持ちでない方はこちら
+    = link_to user_registration_path, class: "SignInMain__btn SignInMain__btn__regis" do
+      新規会員登録
+  .SignInMain__body
+    = link_to user_facebook_omniauth_authorize_path, method: :post, class: "SignInMain__btn SignInMain__btn__facebook" do
+      = icon('fab', 'facebook-square fa-2x', class: "SignInMain__btn__icon2")
+      Facebookでログイン
+    = link_to "#", method: :post, class: "SignInMain__btn SignInMain__btn__twitter" do
+      = icon('fab', 'twitter-square fa-2x', class: "SignInMain__btn__icon2")
+      Twitterでログイン
+    = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "SignInMain__btn SignInMain__btn__google" do
+      = image_tag 'google_color.png', class: 'SignInMain__btn__icon3', size: '114x47'
+      Googleでログイン
+    = form_with model: @user, url: user_session_path, id: 'new_user', local: true do |f|
+      .field
+        %br/
+        = f.email_field :email, autocomplete: "email", class: 'SignInMain__form', placeholder: "メールアドレス"
+      .field
+        %br/
+        = f.password_field :password, autocomplete: "current-password", class: 'SignInMain__form', placeholder: "パスワード"
+      .actions
+        = f.submit "ログイン", class: 'SignInMain__btn SignInMain__btn__login'
+      .IfForgotPWLink
+        - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+          = link_to "パスワードをお忘れの方", new_password_path(resource_name), class: "IfForgotPW"

@@ -1,0 +1,154 @@
+.SignInMain {
+  background-color: #f5f5f5;
+  font-family: YuGothic;
+  &__head{
+    width: 457px;
+    background-color: #00ffff;
+    height: 80px;
+    margin: auto;
+    text-align: center;
+    #top_font{
+      color:#fff;
+      font-weight: bold;
+      font-size: 2rem;
+      line-height: 80px;
+    }
+  }
+  &__title {
+    background-color: #ffffff;
+    height: 145px;
+    width: 457px;
+    font-size: 14px;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #f5f5f5;
+    margin: 0 auto;
+    ul li {
+      margin-bottom: 5px;
+    }
+  }
+  &__body {
+    background-color: #ffffff;
+    min-height: calc(100vh - 225px);
+    width: 457px;
+    margin: 0 auto;
+    padding: 40px 0 0 0;
+    &__margin {
+      background-color: #f5f5f5;
+      min-height: calc(100vh - 128px - 145px - 1px - 240px - 609px);
+      width: 100%;
+    }
+  }
+  &__btn {
+    display: block;
+    height: 50px;
+    width: 343px;
+    margin: 0 auto 16px;
+    border-radius: 1px;
+    font-size: 14px;
+    color: #ffffff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 80px;
+    &__icon1 {
+      padding: 15px 52px 13px 17px;
+    }
+    &__icon2 {
+      padding: 15px 60px 13px 20px;
+    }
+    &__icon3 {
+      padding: 15px 78px 13px 18px;
+    }
+    &__regis {
+      background-color: #1f3134;
+      display: flex;
+      justify-content: center;
+      &:hover{
+        background-color: #1f3134;
+        opacity: 0.7;
+      }
+    }
+    &__facebook {
+      background-color: #414f8a;
+      &:hover{
+        background-color: #414f8a;
+        opacity: 0.7;
+      }
+    }
+    &__twitter {
+        background-color: #00ACEE;
+        &:hover{
+          background-color: #55acee;
+          opacity: 0.7;
+        }
+    }
+    &__google {
+      color: #000000;
+      border: thin solid #a7a7a7;
+      margin-bottom: 50px;
+      &:hover{
+        background-color: #fff;
+        opacity: 0.7;
+      }
+    }
+    &__login {
+      background-color: #e43f3f;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+      outline: none;
+      line-height: 15px;
+      &:checked{
+        background-color: #0b020269;
+      }
+      &:hover{
+        background-color: #e43f3f;
+        opacity: 0.7;
+      }
+    }
+  }
+  &__form {
+    height: 50px;
+    width: 343px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 0px 40px 0px 16px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 4px;
+    padding: 0px 40px 0px 16px;
+    background-color: #ffffff;
+    transition: .2s;
+    font-size: 16px;
+    font-weight: 200px;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+    -webkit-appearance: none;
+    &:focus{
+      border: 1px solid #0095ee;
+      outline: none;
+    }
+  }
+}
+.recaptcha {
+  padding: 20px 0 20px 58px;
+}
+
+.IfForgotPWLink{
+  text-align: center;
+  margin: 50px 157px 0 0;
+  padding: 0 0 40px 0;
+}
+
+.IfForgotPW{
+  color: #0095ee;
+  &:hover {
+    color: #75bfea;
+    border-bottom: 1px solid #75bfea;
+  }
+}
