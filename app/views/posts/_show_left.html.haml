@@ -1,0 +1,15 @@
+.showleft
+  .showleft__like
+    = link_to "#", class: "like_btn" do
+      = icon('fas', 'fas fa-heart', class: "like_icon")
+  .showleft__twitter
+    = link_to "http://twitter.com/share?url=#{request.url}/&text=#{@post.title}/&hashtags=SheaeSpace", class: "btn twitter_btn" do
+      = icon('fab', 'fab fa-twitter', class: "icon")
+  .showleft__facebook
+    = link_to "#", class: "btn facebook_btn" do
+      = icon('fab', 'fab fa-facebook', class: "icon")
+  .showleft__line
+    = link_to "", class: "btn line_btn" do
+      = icon('fab', 'fab fa-line', class: "icon")
+
+

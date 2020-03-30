@@ -2,9 +2,6 @@
   .showmain__box
     .showmain__box__top
       = simple_format(@post.title)
-    .showmain__box__image
-      - @post.images.each do |image|
-        = image_tag image.image.url
     .show
       .show__content
         = simple_format(@post.content)
