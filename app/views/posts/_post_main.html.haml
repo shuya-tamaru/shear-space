@@ -8,10 +8,11 @@
           = f.text_field :title, class: "title",placeholder:"タイトル"
         .form__category
           = f.select :category_id, [["カテゴリー選択", ""], ["意匠設計", value = 1.to_i],["構造設計", value = 2.to_i],["施工管理", value = 3.to_i],["設備環境", value = 4.to_i],["建築法規", value = 5.to_i],["資格", value = 6.to_i],["その他", value = 7.to_i]], class: "category"
-        .form__image
-          = f.fields_for :images do |i|
-            = i.file_field :image
         .form__contents
           = f.text_area :content, class: "content",placeholder:"記事コンテンツ"
+        .image-box__images{ id: 'image-box' }
+          = f.fields_for :images do |i|
+            = i.file_field :image, class: "image-box__images__input", id: 'post_images_attributes_0_image'
         .form__btn
           =f.submit "投稿", class: "button"
+
