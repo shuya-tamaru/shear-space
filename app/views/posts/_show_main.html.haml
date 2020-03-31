@@ -8,6 +8,6 @@
     - if user_signed_in? && current_user.id == @post.user_id
       .button
         = link_to edit_post_path(@post.id)  do
-          更新
+          編集
         = link_to post_path(@post.id), method: :delete  do
           消去

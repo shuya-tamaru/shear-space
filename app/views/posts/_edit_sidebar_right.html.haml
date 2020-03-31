@@ -1,0 +1,21 @@
+.postRight
+  - if @post.images.count == 3
+    %label{for: "post_images_attributes_#{@post.images.count-1}_image", class: "label-box", id: "label-box--#{@post.images.count-1}"}
+      .postRight__form
+        .image-box__images-form{ id: 'image-box' }
+          - if @post.persisted?
+            - @post.images.each_with_index do |image, i|
+              .image-box__images__box
+                = image_tag image.image.url, data: { index: i }, width: "100%", height: 'auto',id: "img"
+                .image-box__images__box__delete__present{"data-index" => "#{i}"}
+                  削除
+  - else 
+    %label{for: "post_images_attributes_#{@post.images.count}_image", class: "label-box", id: "label-box--#{@post.images.count}"}
+      .postRight__form
+        .image-box__images-form{ id: 'image-box' }
+          - if @post.persisted?
+            - @post.images.each_with_index do |image, i|
+              .image-box__images__box
+                = image_tag image.image.url, data: { index: i }, width: "100%", height: 'auto',id: "img"
+                .image-box__images__box__delete__present{"data-index" => "#{i}"}
+                  削除
