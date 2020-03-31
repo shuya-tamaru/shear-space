@@ -19,10 +19,13 @@ $(window).on('load', ()=> {
       `;
     return html2;
   }
+  
+  $(".image-box__images").hide()
+  $(".js-file_group").hide()
+
   var  nowurl   = location.href;
 
   if(nowurl.match(/new/)){
-    $(".image-box__images").hide()
     $("#image-box").on("change", function(event) {
       event.preventDefault();
       $(".postRight__form__text").remove()
@@ -62,8 +65,7 @@ $(window).on('load', ()=> {
   }
 
   if(nowurl.match(/edit/)){
-    $(".image-box__images").hide()
-    $(".js-file_group").hide()
+
 
     // 新しいものを追加する処理
       $("#image-box,.js-file_group").on("change", function(event) {
