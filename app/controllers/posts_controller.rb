@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:edit, :show, :update, :destroy]
 
   def index
     @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(8)
@@ -16,28 +17,32 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    post = Post.find(params[:id])
-    post.update(post_params)
+    @post.update(post_params)
     redirect_to root_path, notice: "更新しました"
   end
 
   def destroy
-    post = Post.find(params[:id])
-    post.destroy
+    @post.destroy
     redirect_to root_path, notice: "消去しました"
+  end
+
+  def search
+    @posts = Post.search(params[:keyword]).includes(:user).order("created_at DESC").page(params[:page]).per(8)
   end
 
   private
   def post_params
     params.require(:post).permit(:title, :content, :category_id, images_attributes: [:id, :image, :_destroy]).merge(user_id: current_user.id)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 
 end
