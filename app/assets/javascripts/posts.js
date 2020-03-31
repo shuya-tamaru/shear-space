@@ -1,4 +1,4 @@
-$(window).on('load', ()=> {
+$(window).on('turbolinks:load', ()=> {
 
   const buildFileField = (num)=> {
 
