@@ -3,7 +3,7 @@
     .mypage__profile__detail
       .mypage__profile__detail__img
         = link_to user_path(current_user.id) do
-          %img{:src => "/assets/member_photo_noimage_thumb.png", :class => "profile_img"}/
+          %img{:src => current_user.image.url , :class => "profile_img_box", :width => "100%", :height => "auto"}/
       .mypage__profile__detail__user
         .mypage__profile__detail__user__nickname
           ニックネーム:  
@@ -17,7 +17,7 @@
       - @posts.each do |post|
         .mypage__profile__post__box
           .mypage__profile__post__box__img
-            %img{:src => "/assets/member_photo_noimage_thumb.png", :class => "profile_img_box"}/
+            %img{:src => current_user.image.url , :class => "profile_img_box", :width => "100%", :height => "auto"}/
           .mypage__profile__post__box__text
             .mypage__profile__post__box__text__category
               カテゴリー : 

@@ -9,6 +9,10 @@
     = f.label :email
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
+  .field
+    = f.label :プロフィール画像
+    %br/
+    = f.file_field :image, autofocus: true, autocomplete: "image"
   - if @sns_id.present?
     = hidden_field_tag :sns_auth, true
   - else

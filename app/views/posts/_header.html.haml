@@ -21,7 +21,7 @@
   .header__img
     - if user_signed_in?
       .header__img__pic
-        %img{:src => "/assets/member_photo_noimage_thumb.png", :class => "img"}/
+        %img{:src => current_user.image.url , :class => "img"}/
       .header__img__nickname
         %p.nickname
           =current_user.nickname

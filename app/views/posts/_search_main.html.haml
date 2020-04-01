@@ -7,7 +7,7 @@
         .main__box__contents__post
           .main__box__contents__post__img
             = link_to "#" do
-              %img{:src => "/assets/member_photo_noimage_thumb.png", :class => "profile-img"}/
+              %img{:src => post.user.image.url , :class => "profile-img", :width => "100%", :height => "auto"}/
           .main__box__contents__post__text
             .main__box__contents__post__text__category
               = link_to "#" do
