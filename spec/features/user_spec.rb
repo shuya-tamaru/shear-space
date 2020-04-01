@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'user_signin', type: :feature do
 
-  let(:user) { FactoryBot.create(:user) }
+  let(:user) { create(:user) }
   
   scenario "user successfully login" do
     visit new_user_session_path
