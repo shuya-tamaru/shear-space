@@ -4,6 +4,10 @@ class Post < ApplicationRecord
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
 
+  validates :title, presence: true
+  validates :content, presence: true
+  validates_associated :images
+
   def self.search(search)
     return Post.all unless search
     Post.where('title LIKE(?)', "%#{search}%").or(Post.where('content LIKE(?)', "%#{search}%"))

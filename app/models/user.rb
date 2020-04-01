@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :posts
   has_many :sns_credentials
   mount_uploader :image, ImageUploader
+  validates :nickname, presence: true
+  validate :password_complexity
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
@@ -22,5 +24,13 @@ class User < ApplicationRecord
     end
     { user: user, sns: sns }
   end
+
+  def password_complexity
+    # Regexp extracted from https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
+    return if password.blank? || password =~ /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z|\A(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)[a-zA-Z\d]+\z/
+
+    errors.add :password, '半角英字と数字両方を含むパスワードかつ7文字以上128文字以下'
+  end
+
 
 end
