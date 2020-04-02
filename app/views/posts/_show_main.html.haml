@@ -11,3 +11,20 @@
           編集
         = link_to post_path(@post.id), method: :delete  do
           消去
+    .comment-form
+      - if current_user
+        = form_with(model: [@post, @comment], local: true) do |f|
+          = f.text_area :text, placeholder: "コメントする", rows: "2", class:"form-box"
+          = f.submit "SEND", class:"send-btn"
+      - else
+        %strong
+          %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+    .comment
+      %h4 ＜コメント一覧＞
+      - if @comments
+        - @comments.each do |comment|
+          %p
+            %strong
+              = link_to "#{comment.user.nickname}:", user_path(comment.user.id),class: "user-name"
+          %p.user-comment
+            = "#{comment.text}"
