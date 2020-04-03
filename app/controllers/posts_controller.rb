@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :show, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:create]
+  
   def index
     @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(8)
   end
@@ -19,6 +20,7 @@ class PostsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
+    @like = Like.new
   end
 
   def edit

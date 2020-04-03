@@ -12,7 +12,8 @@
           記事数 : 
           = current_user.posts.length
         .mypage__profile__detail__user__like
-          いいね：10
+          = "獲得いいね数 : #{@likes_count}"
+          -# = "いいね：#{@posts.liked_posts.length}"
     .mypage__profile__post
       - @posts.each do |post|
         .mypage__profile__post__box

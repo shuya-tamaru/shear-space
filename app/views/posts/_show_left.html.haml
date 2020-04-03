@@ -1,7 +1,14 @@
 .showleft
+  = @post.likes.count
   .showleft__like
-    = link_to "#", class: "like_btn" do
-      = icon('fas', 'fas fa-heart', class: "like_icon")
+    - if current_user.already_liked?(@post)
+      = link_to  post_like_path(@post), method: :delete,class: "like_btn" do
+        = icon('fas', 'fas fa-heart', class: "like_icon")
+    - else
+      = link_to post_likes_path(@post), method: :post, class: "like_btn_delete" do
+        = icon('fas', 'fas fa-heart', class: "like_icon")
+
+
   .showleft__twitter
     = link_to "http://twitter.com/share?url=#{request.url}/&text=#{@post.title}/&hashtags=SheaeSpace", class: "btn twitter_btn" do
       = icon('fab', 'fab fa-twitter', class: "icon")
@@ -11,5 +18,3 @@
   .showleft__line
     = link_to "", class: "btn line_btn" do
       = icon('fab', 'fab fa-line', class: "icon")
-
-

@@ -3,7 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
-  has_many :posts
+  has_many :posts, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :liked_posts, through: :likes, source: :post
   has_many :comments
   has_many :sns_credentials
   mount_uploader :image, ImageUploader
@@ -31,6 +33,10 @@ class User < ApplicationRecord
     return if password.blank? || password =~ /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z|\A(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)[a-zA-Z\d]+\z/
 
     errors.add :password, '半角英字と数字両方を含むパスワードかつ7文字以上128文字以下'
+  end
+  
+  def already_liked?(post)
+    self.likes.exists?(post_id: post.id)
   end
 
 
