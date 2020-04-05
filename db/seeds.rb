@@ -31,49 +31,49 @@ User.create(
       email:    'aaa@aaa',
       password: 'abcd123',
       password_confirmation: "abcd123",
-      image: open("./app/assets/images/test/image1.png")
+      image: open("#{Rails.root}/app/assets/images/test/image1.png")
     },
     {
       nickname: "BB8",
       email:    'bbb@bbb',
       password: 'abcd123',
       password_confirmation: "abcd123",
-      image: open("./app/assets/images/test/image2.png")
+      image: open("#{Rails.root}/app/assets/images/test/image2.png")
     },
     {
       nickname: "ドクター",
       email:    'ccc@ccc',
       password: 'abcd123',
       password_confirmation: "abcd123",
-      image: open("./app/assets/images/test/image3.png")
+      image: open("#{Rails.root}/app/assets/images/test/image3.png")
     },
     {
       nickname: "ケロックス",
       email:    'ddd@ddd',
       password: 'abcd123',
       password_confirmation: "abcd123",
-      image: open("./app/assets/images/test/image4.png")
+      image: open("#{Rails.root}/app/assets/images/test/image4.png")
     },
     {
       nickname: "ケロックス",
       email:    'ddd@ddd',
       password: 'abcd123',
       password_confirmation: "abcd123",
-      image: open("./app/assets/images/test/image4.png")
+      image: open("#{Rails.root}/app/assets/images/test/image4.png")
     },
     {
       nickname: "チキン",
       email:    'eee@eee',
       password: 'abcd123',
       password_confirmation: "abcd123",
-      image: open("./app/assets/images/test/image5.png")
+      image: open("#{Rails.root}/app/assets/images/test/image5.png")
     },
     {
       nickname: "ミースケ",
       email:    'fff@fff',
       password: 'abcd123',
       password_confirmation: "abcd123",
-      image: open("./app/assets/images/test/image6.png")
+      image: open("#{Rails.root}/app/assets/images/test/image6.png")
     },
   ]
 )
