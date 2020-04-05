@@ -19,12 +19,12 @@
       - else
         %strong
           %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
-    .comment
-      %h4 ＜コメント一覧＞
-      - if @comments
-        - @comments.each do |comment|
-          %p
-            %strong
-              = link_to "#{comment.user.nickname}:", user_path(comment.user.id),class: "user-name"
-          %p.user-comment
-            = "#{comment.text}"
+      .comment
+        %h4 ＜コメント一覧＞
+        - if @comments
+          - @comments.each do |comment|
+            %p
+              %strong
+                = link_to "#{comment.user.nickname}:", user_path(comment.user.id),class: "user-name"
+            %p.user-comment
+              = "#{comment.text}"

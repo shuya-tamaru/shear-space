@@ -1,14 +1,14 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :show, :update, :destroy]
-  before_action :authenticate_user!, only: [:create]
-  
+  before_action :move_to_signin, except: [:index,:show, :search] 
+
   def index
     @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(8)
   end
   
   def new
-    @post = Post.new()
-    @post.images.new
+      @post = Post.new()
+      @post.images.new
   end
 
   def create
@@ -47,6 +47,12 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def move_to_signin
+    unless user_signed_in?
+      redirect_to new_user_session_path
+    end
   end
 
 end
