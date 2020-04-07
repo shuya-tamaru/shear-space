@@ -1,32 +1,70 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :nickname
-    %br/
-    = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :プロフィール画像
-    %br/
-    = f.file_field :image, autofocus: true, autocomplete: "image"
-  - if @sns_id.present?
-    = hidden_field_tag :sns_auth, true
-  - else
-    .field
-      = f.label :password
-      - if @minimum_password_length
-        %em
-          (7 characters minimum)
-      %br/
-      = f.password_field :password, autocomplete: "new-password"
-    .field
-      = f.label :password_confirmation
-      %br/
-      = f.password_field :password_confirmation, autocomplete: "new-password"
-    .actions
-      = f.submit "Sign up"
-  = render "devise/shared/links"
+-# .Signup
+-#   %h2 Sign up
+-#   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+-#     = render "devise/shared/error_messages", resource: resource
+-#     .field
+-#       = f.label :nickname
+-#       %br/
+-#       = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
+-#     .field
+-#       = f.label :email
+-#       %br/
+-#       = f.email_field :email, autofocus: true, autocomplete: "email"
+-#     .field
+-#       = f.label :プロフィール画像
+-#       %br/
+-#       = f.file_field :image, autofocus: true, autocomplete: "image"
+-#     - if @sns_id.present?
+-#       = hidden_field_tag :sns_auth, true
+-#     - else
+-#       .field
+-#         = f.label :password
+-#         - if @minimum_password_length
+-#           %em
+-#             (7 characters minimum)
+-#         %br/
+-#         = f.password_field :password, autocomplete: "new-password"
+-#       .field
+-#         = f.label :password_confirmation
+-#         %br/
+-#         = f.password_field :password_confirmation, autocomplete: "new-password"
+-#       .actions
+-#         = f.submit "Sign up"
+
+.SignUpMain
+  .SignUpMain__head
+    = link_to "ShearSpace", "/", id:"top_font"
+  .SignUpMain__body
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource    
+      .field
+        %label{for: "SignUpMain__image", class: "SignUpMain__label", id: "SignUpBox"}
+          .SignUpRight__form
+            .SignUpRight__form__text
+              .js-removeText
+                %i.far.fa-image
+                %p
+                  クリックして画像添付
+        = f.file_field :image, autofocus: true, value: "app/assets/images/member_photo_noimage_thumb.png", autocomplete: "image", class: 'SignUpMain__image', id: "SignUpMain__image"
+      .field
+        %br/
+        = f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: 'SignUpMain__form', placeholder: "ニックネーム"
+      .field
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'SignUpMain__form', placeholder: "メールアドレス"
+      - if @sns_id.present?
+        = hidden_field_tag :sns_auth, true
+        .actions
+          = f.submit "登録", class: 'SignUpMain__btn SignUpMain__btn__login'
+      - else
+        .field
+          - if @minimum_password_length
+            %em
+          %br/
+          = f.password_field :password, autocomplete: "new-password", class: 'SignUpMain__form', placeholder: "パスワード(半角英数7文字以上)"
+        .field
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "new-password", class: 'SignUpMain__form', placeholder: "パスワード(確認用)"
+        .actions
+          = f.submit "登録", class: 'SignUpMain__btn SignUpMain__btn__login'
+
