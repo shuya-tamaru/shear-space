@@ -3,16 +3,16 @@
     %ul.left__category__top
       カテゴリー
       %li.left__category__top__list
-        = link_to "意匠設計", "#", class:"list"
+        = link_to "意匠設計", search_category_posts_path(@posts,category_id:1), class:"list"
       %li.left__category__top__list
-        = link_to "構造設計", "#", class:"list"
+        = link_to "構造設計", search_category_posts_path(@posts,category_id:2), class:"list"
       %li.left__category__top__list
-        = link_to "施工管理", "#", class:"list"
+        = link_to "施工管理", search_category_posts_path(@posts,category_id:3), class:"list"
       %li.left__category__top__list
-        = link_to "設備環境", "#", class:"list"
+        = link_to "設備環境", search_category_posts_path(@posts,category_id:4), class:"list"
       %li.left__category__top__list
-        = link_to "建築法規", "#", class:"list"
+        = link_to "建築法規", search_category_posts_path(@posts,category_id:5), class:"list"
       %li.left__category__top__list
-        = link_to "資格", "#", class:"list"
+        = link_to "資格", search_category_posts_path(@posts,category_id:6), class:"list"
       %li.left__category__top__list
-        = link_to "その他", "#", class:"list"
+        = link_to "その他", search_category_posts_path(@posts,category_id:7), class:"list"

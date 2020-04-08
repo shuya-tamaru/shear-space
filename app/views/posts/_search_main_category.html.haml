@@ -1,0 +1,26 @@
+.main
+  .main__box
+    .main__box__top
+      記事一覧
+    .main__box__contents
+      - @posts.each do |post|
+        .main__box__contents__post
+          .main__box__contents__post__img
+            = link_to "#" do
+              %img{:src => post.user.image.url , :class => "profile-img", :width => "100%", :height => "auto"}/
+          .main__box__contents__post__text
+            .main__box__contents__post__text__category
+              = link_to "#" do
+                カテゴリー : 
+                =post.category.name
+            .main__box__contents__post__text__title
+              = link_to post_path(post.id) do
+                =post.title
+            .main__box__contents__post__text__nickname
+              %p.nickname 
+                = link_to "#" do
+                  = post.user.nickname
+              %p.date 
+                = post.created_at.strftime("%Y年%m月%d日")
+    .page
+      = paginate(@posts)

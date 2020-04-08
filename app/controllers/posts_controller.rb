@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :show, :update, :destroy]
-  before_action :move_to_signin, except: [:index,:show, :search] 
+  before_action :move_to_signin, except: [:index,:show, :search, :search_category] 
 
   def index
     @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(8)
@@ -38,6 +38,11 @@ class PostsController < ApplicationController
 
   def search
     @posts = Post.search(params[:keyword]).includes(:user).order("created_at DESC").page(params[:page]).per(8)
+  end
+
+  def search_category
+    @category = Category.find(params[:category_id])
+    @posts = @category.posts.includes(:user).order("created_at DESC").page(params[:page]).per(8)
   end
 
   private
