@@ -60,4 +60,4 @@
 #     # password: "please use keys"
 #   }
 
-server '54.199.16.87', user: 'ec2-user', roles: %w{app db web}
+server '54.199.16.87' 'http://www.shearspace.net./', user: 'ec2-user', roles: %w{app db web}
