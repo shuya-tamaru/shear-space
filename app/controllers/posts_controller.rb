@@ -13,8 +13,12 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    @post.save!
-    redirect_to root_path, notice: "投稿しました"
+    if @post.save
+      redirect_to root_path, notice: "投稿しました"
+    else
+      flash.now[:alert] = "未入力項目があります"
+      render :action => :new    end
+
   end
 
   def show

@@ -61,3 +61,4 @@
 #   }
 
 server 'www.shearspace.net.', user: 'ec2-user', roles: %w{app db web}
+# '54.199.16.87' 
