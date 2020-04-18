@@ -19,7 +19,3 @@
           .js-file_group{"data-index" => "#{@post.images.count}", id:"js"}
             = file_field_tag :image, name: "post[images_attributes][#{@post.images.count}][image]", class: 'js-file', id:"post_images_attributes_#{@post.images.count}_image"
           =f.submit "更新", class: "editButton"
-
-
-
- 

@@ -10,6 +10,8 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true
   validates_associated :images
+  validates :images, presence: true
+
 
   def self.search(search)
     return Post.all unless search

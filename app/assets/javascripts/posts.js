@@ -75,11 +75,10 @@ $(window).on('turbolinks:load', ()=> {
         const file = event.target.files[0];
         const blobUrl = window.URL.createObjectURL(file);
         const label_id = $(".label-box").attr('id').replace(/[^0-9]/g, '');
-        console.log(num)
+
         if (num == 2){
           $('.label-box').attr({id: `label-box--${(Number(label_id))}`,for: `item_images_attributes_${(Number(label_id))}_image`});
           $('.postRight__form').append(buildImg(Number(label_id), blobUrl));
-          console.log("hello")
         }else{
           $('.postRight__form').append(buildImg(Number(label_id), blobUrl));
           $('#image-box').prepend(buildFileField(Number(label_id)+1));
@@ -130,4 +129,5 @@ $(window).on('turbolinks:load', ()=> {
 
 
   }
+
 })

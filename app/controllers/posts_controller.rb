@@ -16,8 +16,8 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path, notice: "投稿しました"
     else
-      flash.now[:alert] = "未入力項目があります"
-      render :action => :new    end
+      redirect_to new_post_path, notice: "未入力の項目があります"
+    end
 
   end
 
@@ -31,8 +31,12 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post.update(post_params)
-    redirect_to root_path, notice: "更新しました"
+    if @post.update(post_params)
+      redirect_to root_path, notice: "更新しました"
+    else
+      redirect_to edit_post_path, notice: "未入力の項目があります"
+
+    end
   end
 
   def destroy
