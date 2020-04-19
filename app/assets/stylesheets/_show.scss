@@ -19,6 +19,10 @@
   text-align: center;
   color:red;
   font-weight: solid;
+  position: absolute;
+  top:150px;
+  left:50px;
+
   &__like{
     width: 100%;
     height: 25%;
@@ -97,9 +101,9 @@
 }
 .showmain{
   width: calc( 100vw - 40%);
-  height: 100%;
+  height: 120%;
   background-color: #fff;
-  padding:0 10px 0px 10px;
+  padding:0 0px 0px 0px;
   margin-left: 200px;
   &__box{
     width: 100%;
@@ -123,7 +127,7 @@
     }
     .show{
       width: 100%;
-      height: calc(100% - 150px);
+      height: calc(100% - 240px);
       &__content{
         width: 100%;
         height:100%;
