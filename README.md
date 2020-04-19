@@ -19,7 +19,7 @@
 </p><br>
 
 # アプリケーション情報
-サイトリンク↓
+サイトリンク:
 <a href="http://www.shearspace.net./">http://www.shearspace.net./</a>
 
 ## 概要
