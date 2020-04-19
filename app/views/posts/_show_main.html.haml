@@ -18,7 +18,7 @@
           = f.submit "SEND", class:"send-btn"
       - else
         %strong
-          %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+          %p.comment-alert ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
       .comment
         %h4 ＜コメント一覧＞
         - if @comments
