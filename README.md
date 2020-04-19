@@ -1,4 +1,4 @@
-![ShearSpace](https://i.gyazo.com/48499627090b734352bf22063a813b4a.png)
+![ShearSpace](https://i.gyazo.com/f17c3b991854b0faf633f733ba9cdca9.png)
 
 
 <h1 align="center">ShearSpace</h1>
