@@ -19,6 +19,9 @@
 </p><br>
 
 # アプリケーション情報
+サイトリンク↓
+<a href="http://www.shearspace.net./">http://www.shearspace.net./</a>
+
 ## 概要
 建設業界専用の技術ブログ投稿サイトを作成しました。
 
