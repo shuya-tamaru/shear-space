@@ -20,7 +20,7 @@
 
 # アプリケーション情報
 サイトリンク:
-<a href="http://www.shearspace.net./" target="'_blank'">http://www.shearspace.net./</a>
+<a href="https://www.shearspace.net./" target="'_blank'">http://www.shearspace.net./</a>
 
 ## 概要
 建設業界専用の技術ブログ投稿サイトを作成しました。
