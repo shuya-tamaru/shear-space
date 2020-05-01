@@ -19,12 +19,13 @@
     = form_with model: @user, url: user_session_path, id: 'new_user', local: true do |f|
       .field
         %br/
-        = f.email_field :email, autocomplete: "email", class: 'SignInMain__form', placeholder: "メールアドレス"
+        = f.email_field :email, autocomplete: "email", class: 'SignInMain__form', placeholder: "メールアドレス(テストユーザー:aaa@aaa)"
       .field
         %br/
-        = f.password_field :password, autocomplete: "current-password", class: 'SignInMain__form', placeholder: "パスワード"
+        = f.password_field :password, autocomplete: "current-password", class: 'SignInMain__form', placeholder: "パスワード(テストユーザー:abcd123)"
       .actions
         = f.submit "ログイン", class: 'SignInMain__btn SignInMain__btn__login'
       .IfForgotPWLink
         - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
           = link_to "パスワードをお忘れの方", new_password_path(resource_name), class: "IfForgotPW"
+
