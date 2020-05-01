@@ -55,3 +55,13 @@ set :default_env, {
   AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
   AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
 }
+
+Rake::Task["deploy:symlink:release"].clear
+    namespace :symlink do
+      desc 'Symlink release to current'
+      task :release do
+        on release_roles :all do
+          execute :ln, '-s', release_path, current_path
+        end
+      end
+    end
