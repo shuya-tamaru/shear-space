@@ -5,8 +5,8 @@ app_path = File.expand_path('../../../', __FILE__)
 worker_processes 1
 
 #アプリケーションの設置されているディレクトリを指定
-# working_directory "#{app_path}/current"
-working_directory "/var/www/shear-space/current"
+working_directory "#{app_path}/current"
+# working_directory "/var/www/shear-space/current"
 
 
 
@@ -57,6 +57,6 @@ after_fork do |_server, _worker|
   defined?(ActiveRecord::Base) && ActiveRecord::Base.establish_connection
 end
 
-before_exec do |server|
-  ENV["BUNDLE_GEMFILE"] = "/var/www/shear-space/Gemfile"
-end
+# before_exec do |server|
+#   ENV["BUNDLE_GEMFILE"] = "/var/www/shear-space/Gemfile"
+# end
