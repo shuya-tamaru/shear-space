@@ -6,8 +6,8 @@
 
 # アプリケーション情報
 サイトリンク:
-<a href="https://www.shearspace.net./" target="'_blank'">https://www.shearspace.net./</a>
-テストユーザー：aaa@aaa
+<a href="https://www.shearspace.net./" target="'_blank'">https://www.shearspace.net./</a></br>
+テストユーザー：aaa@aaa</br>
 テストユーザーパスワード: abcd123    
 
 # 概要
@@ -39,8 +39,8 @@
 ![個人アプリ　ShearSpace](https://user-images.githubusercontent.com/57956439/78368926-5fa54b80-75ff-11ea-97eb-b9c42e72f776.png)
 
 # 今後の追加予定
-・APIを使用したユーザー登録
-・子カテゴリ追加
-・タグ機能
+- APIを使用したユーザー登録
+- 子カテゴリ追加
+- タグ機能
 
 ​
