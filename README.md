@@ -23,17 +23,17 @@
 まだまだ機能としては不十分で、付け加えたい機能もありますが、製作を通して基礎から自分の課題まで学ぶことができたと思っております。
 
 # 使用技術
-・Ruby on rails 5.2.4.1
-・Ruby 2.5.1
-・Haml
-・SCSS
-・jQuery
-・EC2
-・S3
-・MySQL
-・Unicorn
-・Nginx
-・Capistrano
+- Ruby on rails 5.2.4.1
+- Ruby 2.5.1
+- Haml
+- SCSS
+- jQuery
+- EC2
+- S3
+- MySQL
+- Unicorn
+- Nginx
+- Capistrano
 
 # DB設計
 ![個人アプリ　ShearSpace](https://user-images.githubusercontent.com/57956439/78368926-5fa54b80-75ff-11ea-97eb-b9c42e72f776.png)
