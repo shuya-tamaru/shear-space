@@ -7,13 +7,13 @@
     = link_to new_user_registration_path, class: "SignInMain__btn SignInMain__btn__regis" do
       新規会員登録
   .SignInMain__body
-    = link_to user_facebook_omniauth_authorize_path, method: :post, class: "SignInMain__btn SignInMain__btn__facebook" do
+    = link_to "#", method: :post, class: "SignInMain__btn SignInMain__btn__facebook" do
       = icon('fab', 'facebook-square fa-2x', class: "SignInMain__btn__icon2")
       Facebookでログイン(未実装)
     = link_to "#", method: :post, class: "SignInMain__btn SignInMain__btn__twitter" do
       = icon('fab', 'twitter-square fa-2x', class: "SignInMain__btn__icon2")
       Twitterでログインン(未実装)
-    = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "SignInMain__btn SignInMain__btn__google" do
+    = link_to "#", method: :post, class: "SignInMain__btn SignInMain__btn__google" do
       = image_tag 'google_color.png', class: 'SignInMain__btn__icon3', size: '114x47'
       Googleでログインン(未実装)
     = form_with model: @user, url: user_session_path, id: 'new_user', local: true do |f|
